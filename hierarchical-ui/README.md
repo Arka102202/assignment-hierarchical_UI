@@ -1,6 +1,7 @@
 # Project models:
 
-  ```employee = {
+  ```models
+  employee = {
       _id: string,
       emp_name: string,
       phNumber: number,
