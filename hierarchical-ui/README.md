@@ -24,13 +24,12 @@
       cDate: string,
       status: ["active", "suspended", "deleted"],
       name: string,
-      phNumber: number,
+      phNumber: string,
       emailId: string,
       teamId: string,
       deptId: string,
       position: string,
       password: string,
-      username: string,
       isHead: boolean
   };
   team = {
