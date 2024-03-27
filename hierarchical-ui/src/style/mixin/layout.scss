@@ -1,0 +1,154 @@
+//////////////////////////////////////////////////////////////////
+/// ///////////////////// flex /////////////////////////////////
+/// //////////////////////////////////////////////////////////////
+// both common
+@mixin flex-cc($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-ss($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@mixin flex-ee($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+// start-center
+@mixin flex-sc($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin flex-cs($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+// start-end
+@mixin flex-ec($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: flex-end;
+  align-items: center;
+}
+@mixin flex-ce($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+//space_between
+@mixin flex-sbc($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-sbs($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@mixin flex-sbe($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+@mixin flex-ses($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+// space_around
+@mixin flex-sas($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+//space_around
+@mixin flex-sac($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin flex-sas($direction: row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+//////////////////////////////////////////////////////////////////
+/// ///////////////////// Grid /////////////////////////////////
+/// //////////////////////////////////////////////////////////////
+
+@mixin grid-auto-fit-col($minWidth){
+  grid-template-columns: repeat(auto-fit, minmax($minWidth, 1fr));
+}
+
+@mixin grid-n-eql-col($n){
+  grid-template-columns: repeat($n, 1fr);
+}
+
+@mixin grid-n-fixed-col($n){
+  grid-template-columns: repeat($n, (100% / $n));
+}
+
+// array value should be provided
+// @include grid-n-col((1fr, 2fr, 1fr, 3fr));
+// or
+// $columnValues: (1fr, 2fr, 1fr, 3fr);
+// .my-container {
+//     @include grid-n-col($columnValues);
+//   }
+@mixin grid-n-col($columns) {
+  $columnsString: '';
+  @each $col in $columns {
+    $columnsString: #{$columnsString} #{$col};
+  }
+  grid-template-columns: $columnsString;
+}
+
+@mixin grid-sc{
+  display: grid;
+  justify-items: start;
+  align-items: center;
+}
+@mixin grid-cc{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+@mixin grid-ss{
+  display: grid;
+  justify-items: start;
+  align-items: start;
+}
+
+
+////////////////////////////////////////
+
+@mixin center-elem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

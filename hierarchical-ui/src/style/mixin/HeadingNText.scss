@@ -1,0 +1,35 @@
+@mixin font-style($size, $weight: 400, $clr: #232323, $family: var(--font-family)){
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  color: $clr;
+}
+
+@mixin h1($clr: #232323){
+  @include font-style(6rem, 700, $clr);
+}
+
+@mixin h2($clr: #232323, $weight: 600) {
+  @include font-style(4.8rem, $weight, $clr);
+}
+
+@mixin h3-large($clr: #232323, $weight: 500) {
+  @include font-style(4rem, $weight, $clr);
+}
+
+@mixin h3($clr: #232323, $weight: 500) {
+  @include font-style(3.2rem, $weight, $clr);
+}
+
+@mixin h4($clr: #232323, $weight: 400) {
+  @include font-style(2.4rem, $weight, $clr);
+}
+
+@mixin h5($clr: #232323, $weight: 400) {
+  @include font-style(1.8rem, $weight, $clr);
+}
+
+@mixin bodyText($clr: #232323, $weight: 400){
+  @include font-style(1.4rem, $weight, $clr);
+}
+

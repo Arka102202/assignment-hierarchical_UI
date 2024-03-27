@@ -1,6 +1,6 @@
 # Basic project details:
 
-  This is a web-app to visualize the hierarchical structure of a company. So, the users will only be the company's employees. There will not be any `signUp` feature but a `login` from will be provided for the employees of the company, for this I am creating a demo `username`=`Arkadyuti` and `password`=`123456`. Upon login user will be able to perform all the actions like `creating` new `department`s, `team`s, `employee`s, `adding` `employee`s to a `team` as members and all other stuff.
+  This is a web-app to visualize the hierarchical structure of a company. So, the users will only be the company's employees. There will not be any `signUp` feature but a `login` form will be provided for the employees of the company, for this I am creating a demo `username`=`Arkadyuti` and `password`=`123456`. Upon login user will be able to perform all the actions like `creating` new `department`s, `team`s, `employee`s, `adding` `employee`s to a `team` as members and all other stuff.
 
   At the time of `adding` a new `employee` the default `username` will the `emailId` and `password` will be the first part of the `emailId`, e.g. `emailId`: 789456123.sikdar@gmail.com, then  `username`: 789456123.sikdar@gmail.com and `password`: 789456123.sikdar.
   The demo `username` and `password` is `username`=`Arkadyuti` and `password`=`123456`.
@@ -15,7 +15,7 @@
   2.  `/allEmployees`:
       this page will show a tabular representation of all the employees and user will be able to `filter` an employee by `Employee Name`, `Phone Number`, and `Email ID`.
 
-      
+
 # Project models:
 
   ```
@@ -86,4 +86,5 @@
   5.  able to `search` for a `team` or `department` by `name`: 
   6.  able to `filter` an employee by `Employee Name`, `Phone Number`, and `Email ID`: 
   7.  only the head of a team will be able to see the employee: 
-      In order to implement this feature, I am providing a fake account aspect to the web app, so that I cam keep track of the employee is logged in and based on that info I will be able implement this feature.
+      * In order to implement this feature, I am providing a fake account aspect to the web app, so that I cam keep track of the employee 
+        is logged in and based on that info I will be able implement this feature.

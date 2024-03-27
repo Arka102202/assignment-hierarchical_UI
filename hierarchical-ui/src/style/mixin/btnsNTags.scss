@@ -1,0 +1,6 @@
+@mixin btn($backgroundClr: #fff111, $fontClr: #000) {
+  padding: var(--btn-tb-pad) var(--btn-lr-pad);
+  background: $backgroundClr;
+  @include bodyText;
+  color: $fontClr;
+}
