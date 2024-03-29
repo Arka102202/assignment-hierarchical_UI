@@ -1,0 +1,28 @@
+.remove-box {
+  @include bodyText(var(--red-6), 600);
+  @include flex-cc(column);
+  gap: 1rem;
+
+  .remove-btn-box {
+    @include flex-cc;
+    gap: 2rem;
+
+    .btn-ok,
+    .btn-cancel {
+      width: 15rem;
+      border-radius: var(--border-radius);
+      font-weight: 500;
+    }
+
+    .btn-ok {
+      @include btn(var(--blue-6), #fff);
+    }
+
+    .btn-cancel {
+      @include btn(var(--red-6), #fff);
+    }
+  }
+
+
+
+}

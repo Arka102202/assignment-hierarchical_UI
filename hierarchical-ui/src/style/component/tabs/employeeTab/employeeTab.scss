@@ -1,0 +1,32 @@
+.employee-tab-box {
+  width: 95%;
+  @include flex-cs(column);
+  @include bodyText;
+  gap: .5rem;
+  margin: auto;
+
+  .header {
+    @include flex-sbc;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--vio-0);
+    border-radius: var(--border-radius);
+
+    .check-title-box{
+      @include flex-sc;
+      gap: 1rem;
+
+      .title-box{
+        @include flex-sc;
+        gap: .5rem;
+        @include bodyText(var(--vio-6), 600);
+      }
+    }
+
+    .btn-box {
+      @include flex-cc;
+      gap: 1rem;
+      overflow: hidden;
+    }
+  }
+}

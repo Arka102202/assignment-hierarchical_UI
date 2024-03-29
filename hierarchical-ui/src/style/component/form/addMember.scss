@@ -1,0 +1,51 @@
+.result-box {
+  min-width: 35rem;
+  @include bodyText();
+  border-radius: var(--border-radius);
+  border: .2rem solid var(--ip-border-placeHolder-clr);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+
+  &-title{
+    @include grid-cc;
+    @include grid-n-eql-col(2);
+    
+
+    p{
+      padding: 1rem;
+      width: 100%;
+      border-bottom: .1rem solid var(--ip-border-placeHolder-clr);
+      @include flex-cc;
+      font-weight: 600;
+      cursor: pointer;
+
+      @include transition;
+    }
+
+    .p-1{
+      border-right: .1rem solid var(--ip-border-placeHolder-clr);
+      border-top-left-radius: var(--border-radius);
+    }
+
+    .p-2{
+      border-top-right-radius: var(--border-radius);
+    }
+  }
+
+  .result-view{
+    max-height: 20rem;
+    overflow: auto;
+    
+
+    .each-emp{
+      @include flex-sc;
+      gap: 1rem;
+      padding: .5rem;
+      border-bottom: .1rem solid var(--ip-border-placeHolder-clr);;
+    }
+
+    .each-emp:last-child{
+      border-bottom: 0;
+    }
+  }
+}

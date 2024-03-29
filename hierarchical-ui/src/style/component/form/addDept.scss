@@ -1,0 +1,11 @@
+.add-dept-form{
+
+  @include flex-cc(column);
+  gap: 2rem;
+
+  .submit-btn{
+    @include btn(var(--blue-6), #fff);
+    width: 20rem;
+    border-radius: var(--border-radius);
+  }
+}

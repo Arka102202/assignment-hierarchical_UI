@@ -1,0 +1,31 @@
+.text-input-box {
+  @include flex-cs(column);
+  gap: .5rem;
+  @include bodyText();
+
+  .error,
+  input {
+    padding: 1rem;
+    min-width: 35rem;
+    @include bodyText();
+    border-radius: var(--border-radius);
+  }
+
+  input {
+
+    
+    outline: none;
+    border: .2rem solid var(--ip-border-placeHolder-clr);
+
+    &::placeholder {
+      @include bodyText(var(--ip-border-placeHolder-clr));
+    }
+  }
+
+  .error {
+    background-color: var(--red-0);
+    color: var(--red-6);
+  }
+
+
+}

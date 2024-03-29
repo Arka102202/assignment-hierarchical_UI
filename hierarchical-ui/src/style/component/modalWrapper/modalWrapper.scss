@@ -1,0 +1,40 @@
+.modal-wrapper-outer-box{
+  width: 100vw;
+  height: 100vh;
+
+  backdrop-filter: blur(10px);
+
+  @include flex-cc;
+
+  position: absolute;
+  top: 0;
+
+  .container{
+    @include flex-cc(column);
+
+    gap: 2rem;
+
+    padding: 2rem;
+
+    background-color: #fff;
+    border: .2rem solid var(--ip-border-placeHolder-clr);
+    border-radius: var(--border-radius);
+
+    .header{
+      @include flex-sbc;
+      width: 100%;
+      overflow: hidden;
+
+      @include h5(#232323, 600);
+
+      .close-modal{
+        @include btn-circular;
+        @include transition;
+
+        width: 3rem;
+        height: 3rem;
+        
+      }
+    }
+  }
+}

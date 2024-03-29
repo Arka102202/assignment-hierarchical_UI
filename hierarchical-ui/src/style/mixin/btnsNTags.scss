@@ -4,3 +4,23 @@
   @include bodyText;
   color: $fontClr;
 }
+
+@mixin btn-circular($backgroundClr: #fff, $fontClr: #000) {
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: .5rem;
+  border: .1px solid var(--ip-border-placeHolder-clr);
+  background: $backgroundClr;
+  @include bodyText;
+  color: $fontClr;
+  border-radius: 50%;
+  @include flex-cc;
+
+  img {
+    width: 85%;
+  }
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}

@@ -1,0 +1,4 @@
+.remove-btn {
+  @include btn-circular;
+  @include transition;
+}
