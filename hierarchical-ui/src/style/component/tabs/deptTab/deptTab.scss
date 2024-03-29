@@ -1,0 +1,38 @@
+.dept-tab-box{
+  width: 95%;
+  @include flex-cs(column);
+  @include bodyText;
+  gap: .5rem;
+  margin: auto;
+
+  .header{
+    @include flex-sbc;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--blue-0);
+    border-radius: var(--border-radius);
+    .tab-title{
+      @include h5(var(--blue-6), 600);
+    }
+
+    .btn-box{
+      @include flex-cc;
+      gap: 1rem;
+
+      .level-open-close-btn{
+        @include btn-circular;
+      }
+    }
+  }
+
+  .no-info-box{
+    @include flex-sc(column);
+    width: 100%;
+    padding: 10rem;
+
+    background-color: rgb(194, 194, 194);
+    border-radius: var(--border-radius);
+
+    @include h5(#232323, 500);
+  }
+}

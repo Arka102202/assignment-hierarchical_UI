@@ -1,0 +1,27 @@
+.team-tab-box {
+  width: 95%;
+  @include flex-cs(column);
+  @include bodyText;
+  gap: .5rem;
+  margin: auto;
+
+  .header{
+    @include flex-sbc;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--ylo-0);
+    border-radius: var(--border-radius);
+    .tab-title{
+      @include h5(var(--ylo-6), 600);
+    }
+
+    .btn-box{
+      @include flex-cc;
+      gap: 1rem;
+
+      .level-open-close-btn{
+        @include btn-circular;
+      }
+    }
+  }
+}

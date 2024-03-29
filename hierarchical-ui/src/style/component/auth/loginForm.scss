@@ -1,0 +1,29 @@
+.login-form-box{
+  padding: 3rem;
+  @include bodyText();
+
+  @include flex-cc(column);
+  gap: 3rem;
+
+  border: .2rem solid var(--ip-border-placeHolder-clr);
+
+  max-width: 45rem;
+  border-radius: var(--border-radius);
+
+  .title{
+    @include h3;
+  }
+
+  .login-submit-btn{
+    @include btn(var(--blue-6), #fff);
+    border-radius: var(--border-radius);
+    width: 20rem;
+    font-weight: 600;
+
+    @include transition;
+
+    &:hover{
+      background-color: var(--blue-2);
+    }
+  }
+}

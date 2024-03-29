@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import TextIP from '../../input elements/textInput/TextIP';
 import { findOne } from '../../../utils/mimic API calls/employee';
 import { useDispatch } from 'react-redux';
 import { updateCredential, updateUser } from '../../../state/slices/user';
+import BasicIP from '../../input elements/basicInput/BasicIP';
 
-const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
+const LoginForm = ({ onSubmit = () => { }, setIsValidUser = () => { } }) => {
 
   const dispatch = useDispatch();
 
@@ -13,6 +13,8 @@ const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
     username: "",
     password: ""
   });
+
+  const [disable, setDisable] = useState(false);
 
   // for the error state of each input field
   const [err, setErr] = useState({
@@ -26,7 +28,7 @@ const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
   // setting password error state
   const setPasswordError = (value) => {
     setErr(state => {
-      return {...state, password: value}
+      return { ...state, password: value }
     })
   }
 
@@ -41,7 +43,7 @@ const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
         return { ...state, username: false }
       })
     } catch (err) {
-      dispatch(updateCredential({user:{}, isLoggedIn: false}));
+      dispatch(updateCredential({ user: {}, isLoggedIn: false }));
       setIsValidUser(false);
       setErr(state => {
         return { ...state, username: true }
@@ -62,8 +64,9 @@ const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
 
   return (
     <div className='login-form-box'>
+      <p className='title'>Login</p>
       {/* for username */}
-      <TextIP value={cred.username} isFocusOnLoad={!isUsernameBlurred}
+      <BasicIP value={cred.username} isFocusOnLoad={!isUsernameBlurred}
         onChange={(e) => setCred(state => {
           return { ...state, username: e.target.value }
         })}
@@ -73,7 +76,7 @@ const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
         placeHolder='Please enter your username e.g. xyz.abc@pqts.com'
       />
       {/* for password */}
-      <TextIP type='password' value={cred.password} isFocusOnLoad={false}
+      <BasicIP type='password' value={cred.password} isFocusOnLoad={false}
         onChange={(e) => setCred(state => {
           return { ...state, password: e.target.value }
         })}
@@ -82,7 +85,7 @@ const LoginForm = ({onSubmit = () => {}, setIsValidUser = () => {}}) => {
         placeHolder='Please enter your password'
       />
 
-      <button className='login-submit-btn' onClick={() => onSubmit(setPasswordError, cred.password)}>login</button>
+      <button className='login-submit-btn' disabled={disable} onClick={() => onSubmit(setPasswordError, cred.password, setDisable)}>login</button>
     </div>
   );
 };

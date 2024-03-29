@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const TextIP = ({ placeHolder = "Type here ...", value = "", onChange = () => { }, isErr = false, errMsg = "Something went wrong", setIsBlurred = () => { }, isFocusOnLoad = false, type = "text" }) => {
+const BasicIP = ({ placeHolder = "Type here ...", value = "", onChange = () => { }, isErr = false, errMsg = "Something went wrong", setIsBlurred = () => { }, isFocusOnLoad = false, type = "text", blurKey = "" }) => {
 
 
   const ref = useRef();
@@ -14,12 +14,13 @@ const TextIP = ({ placeHolder = "Type here ...", value = "", onChange = () => { 
   return (
     <div className="text-input-box">
       <input type={type} value={value} placeholder={placeHolder} ref={ref}
+        onClick={e => e.stopPropagation()}
         onChange={onChange}
-        onFocus={() => setIsBlurred(false)}
-        onBlur={() => setIsBlurred(true)} />
+        onFocus={() => setIsBlurred(false, blurKey)}
+        onBlur={() => setIsBlurred(true, blurKey)} />
       {isErr && <p className="error">{errMsg}</p>}
     </div>
   );
 };
 
-export default TextIP;
+export default BasicIP;

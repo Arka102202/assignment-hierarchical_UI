@@ -6,8 +6,27 @@
 @import "./mixin/animation.scss";
 
 // component
-
+@import "./component/inputElements/basicIP.scss";
+@import "./component/auth/loginForm.scss";
+@import "./component/tabs/CEOTab/ceoTab.scss";
+@import "./component/tabs/deptTab/deptTab.scss";
+@import "./component/tabs/deptTab/addDeptBtn.scss";
+@import "./component/form/addDept.scss";
+@import "./component/tabs/teamTab/teamTab.scss";
+@import "./component/tabs/teamTab/addTeamBtn.scss";
+@import "./component/form/addTeam.scss";
+@import "./component/tabs/employeeTab/employeeTab.scss";
+@import "./component/tabs/employeeTab/employeeBtn.scss";
+@import "./component/form/addEmployee.scss";
+@import "./component/modalWrapper/modalWrapper.scss";
+@import "./component/confirmationBox/confirmationBox.scss";
+@import "./component/searchBox/employeeSearchBox.scss";
+@import "./component/form/addMember.scss";
+@import "./component/form/transferMember.scss";
+@import "./component/tabs/employeeTab/transferBtn.scss";
+@import "./component/form/removeMember.scss";
+@import "./component/tabs/employeeTab/removeBtn.scss";
 
 // page
-
-
+@import "./page/root.scss";
+@import "./page/homepage.scss";

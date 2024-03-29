@@ -1,0 +1,23 @@
+.search-box {
+  @include flex-sc;
+  gap: 2rem;
+  margin-bottom: 1rem;
+
+  input {
+    padding: 1rem;
+    min-width: 29rem;
+    @include bodyText();
+    border-radius: var(--border-radius);
+    outline: none;
+    border: .2rem solid var(--ip-border-placeHolder-clr);
+
+    &::placeholder {
+      @include bodyText(var(--ip-border-placeHolder-clr));
+    }
+  }
+
+  .search-btn {
+    @include btn-circular;
+    @include transition;
+  }
+}

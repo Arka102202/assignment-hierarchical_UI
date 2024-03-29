@@ -15,6 +15,11 @@
   2.  `/allEmployees`:
       this page will show a tabular representation of all the employees and user will be able to `filter` an employee by `Employee Name`, `Phone Number`, and `Email ID`.
 
+  `Assumptions`:
+  1. `An employee from HR can't be moved to the design team` to implement this the department name has to be exactly `HR` and `Design`.
+  2. Employees can be added without assigning to any team or department, but a department will must have a `Head`, and a team will must have a `Head` and `At-least one member`.
+  3. 
+
 
 # Project models:
 
