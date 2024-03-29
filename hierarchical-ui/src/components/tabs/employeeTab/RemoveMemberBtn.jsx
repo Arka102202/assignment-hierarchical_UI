@@ -8,8 +8,7 @@ const RemoveMemberBtn = ({ memberList = [], setRefetch = () => { } }) => {
 
   const [showForm, setShowForm] = useState(false);
   return (
-    <div>
-      <>
+    <>
         <button className='remove-btn' title="Remove member" disabled={showForm} onClick={(e) => setShowForm(true)}>
           <img src={logo} alt="" />
         </button >
@@ -18,7 +17,6 @@ const RemoveMemberBtn = ({ memberList = [], setRefetch = () => { } }) => {
         </ModalWrapper>, document.getElementById("modal-root"))
         }
       </>
-    </div>
   );
 };
 

@@ -31,7 +31,7 @@ export const genEmp = () => {
       cDate: new Date().toISOString(),
       status: "active",
       name: names[i],
-      phNumber: generateRandom10DigitNumber(),
+      phNumber: generateRandom10DigitNumber()+"",
       emailId: "789456123.sikdar@gmail.com",
       teamId: "",
       deptId: "",

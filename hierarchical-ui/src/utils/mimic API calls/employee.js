@@ -21,7 +21,34 @@ export const readAll = (page = 1, limit = 10, teamId = "") => {
       if (employees && employees.length !== 0)
         if (limit === -1) resolve(employees);
         else resolve(employees.slice(start, end));
-      else reject({ error: true, message: "No team found", data: [] });
+      else reject({ error: true, message: "No user found", data: [] });
+    }, getNetworkDelay())
+  });
+}
+
+export const readAllByNameEmailPh = (page = 1, limit = 10, email = "", name = "", ph = "") => {
+  let employees = JSON.parse(localStorage.getItem("emp"));
+  // console.log(employees, email, name, ph);
+  if (employees) {
+    if (email) employees = employees.filter(el => el.emailId.includes(email));
+    if (name && employees) employees = employees.filter(el => el.name.includes(name));
+    if (ph  && employees) employees = employees.filter(el => el.phNumber.includes(ph));
+  }
+  const start = (page - 1) * limit;
+  const end = start + limit;
+
+  // filter using the searchString
+
+  // console.log(employees);
+
+
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (employees && employees.length !== 0)
+        if (limit === -1) resolve(employees);
+        else resolve(employees.slice(start, end));
+      else reject({ error: true, message: "No user found", data: [] });
     }, getNetworkDelay())
   });
 }
@@ -77,7 +104,7 @@ export const readAllForAddMemBer = (deptId = "", teamId = "", name = "") => {
   const resp = [];
 
   Object.entries(employeesByTeam).forEach(([key, value]) => {
-    console.log({ key, value });
+    // console.log({ key, value });
     if (key !== teamId && value.length > 1) {
       let count = 0, canGo = value.length - 1;
       for (let i = 0; i < value.length || count < canGo; i++) {

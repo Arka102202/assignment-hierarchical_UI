@@ -1,0 +1,76 @@
+.outer-box {
+  @include bodyText;
+
+  margin-bottom: 2rem;
+
+  .search-boxes {
+    @include flex-sbc;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+
+    .go-back-btn {
+      @include btn-circular;
+    }
+
+
+    .search-all-box {
+      @include flex-cs(column);
+      gap: .5rem;
+      input {
+        padding: 1rem;
+        width: 35rem;
+        @include bodyText();
+        border-radius: var(--border-radius);
+        outline: none;
+        border: .2rem solid var(--ip-border-placeHolder-clr);
+
+        &::placeholder {
+          @include bodyText(var(--ip-border-placeHolder-clr));
+        }
+
+        @media (max-width: 77em) {
+          width: 30rem;
+        }
+        @media (max-width: 63em) {
+          width: 25rem;
+        }
+        @media (max-width: 53em) {
+          width: 20rem;
+        }
+        @media (max-width: 43em) {
+          width: 16rem;
+        }
+        @media (max-width: 30em) {
+          width: 13rem;
+        }
+        @media (max-width: 24em) {
+          width: 10rem;
+        }
+        @media (max-width: 22em) {
+          width: 8rem;
+        }
+      }
+    }
+  }
+
+  .emp-table {
+    @include flex-cc(column);
+    gap: .5rem;
+  }
+
+  .no-info {
+
+    color: var(--red-6);
+    background-color: #f8f9fa;
+
+    width: 100%;
+    padding: 20rem;
+
+    @include flex-cc;
+    border-radius: var(--border-radius);
+
+    padding: 2rem;
+
+  }
+}

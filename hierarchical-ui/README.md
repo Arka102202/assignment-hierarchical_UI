@@ -17,8 +17,10 @@
 
   `Assumptions`:
   1. `An employee from HR can't be moved to the design team` to implement this the department name has to be exactly `HR` and `Design`.
-  2. Employees can be added without assigning to any team or department, but a department will must have a `Head`, and a team will must have a `Head` and `At-least one member`.
-  3. 
+  2. Employees can be added without assigning to any team or department, but a department will must have a `Head`, and a team will must have a `Head` and `At-least one member`. 
+
+  `Note`: 
+  1. In order to simulate the network lag while getting the from the local storage, I have implemented those read write functions using some Promisify-ed setTimeout function which arbitrarily delay the response between 100ms to 1s.
 
 
 # Project models:
@@ -87,8 +89,7 @@
   4.  able to perform actions like -  `Add`, `Modify` with a `dept`:
       - there will be two button one at the CEO level and one at the global level to `add a dept`.
       - one button will be provided to `modify` the info of any dept at the dept level.
-  5.  able to `search` for a `team` or `department` by `name`: 
-  6.  able to `filter` an employee by `Employee Name`, `Phone Number`, and `Email ID`: 
-  7.  only the head of a team will be able to see the employee: 
+  5.  able to `filter` an employee by `Employee Name`, `Phone Number`, and `Email ID`: 
+  6.  only the head of a team will be able to see the employee: 
       * In order to implement this feature, I am providing a fake account aspect to the web app, so that I cam keep track of the employee 
         is logged in and based on that info I will be able implement this feature.

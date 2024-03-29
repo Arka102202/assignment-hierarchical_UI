@@ -18,7 +18,7 @@
     .btn-box{
       @include flex-cc;
       gap: 1rem;
-
+      overflow: hidden;
       .level-open-close-btn{
         @include btn-circular;
       }

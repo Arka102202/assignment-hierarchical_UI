@@ -2,4 +2,14 @@
   @include flex-sc(column);
 
   width: 100vw;
+
+  margin-bottom: 3rem;
+
+  .all-emp-btn{
+    margin: 0 5rem 0 auto;
+    @include btn(var(--blue-6), #fff);
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+  }
+  
 }

@@ -23,11 +23,17 @@
     .header{
       @include flex-sbc;
       width: 100%;
+      overflow: hidden;
 
       @include h5(#232323, 600);
 
       .close-modal{
         @include btn-circular;
+        @include transition;
+
+        width: 3rem;
+        height: 3rem;
+        
       }
     }
   }

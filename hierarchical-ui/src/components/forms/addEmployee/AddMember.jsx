@@ -11,7 +11,7 @@ const AddMember = ({ deptId = "", teamId = "", error = "", selected = [], setSel
   const search = async () => {
     try {
       const resp = await readAllForAddMemBer(deptId, teamId, query);
-      console.log(resp);
+      // console.log(resp);
       setAllEmps(resp);
       setFetchErr(false);
     } catch (err) {

@@ -9,6 +9,7 @@ import AddEmployeeBtn from '../employeeTab/AddEmployeeBtn';
 import AddTeamBtn from './AddTeamBtn';
 import TransferMemberBtn from '../employeeTab/TransferMemberBtn';
 import RemoveMemberBtn from '../employeeTab/RemoveMemberBtn';
+import Swal from 'sweetalert2';
 
 const TeamTab = ({ data = {}, teamIndex = 0, setRefetchTeam = () => { }, deptId = "" }) => {
 
@@ -18,10 +19,11 @@ const TeamTab = ({ data = {}, teamIndex = 0, setRefetchTeam = () => { }, deptId 
   const [refetch, setRefetch] = useState(false);
   const [memberWithOutHeadCount, setMemberWithOutHeadCount] = useState({});
   const [selected, setSelected] = useState({});
+  const user = useSelector(state => state.userState.user);
 
   const toggleShow = () => dispatch(toggleShowMember(data._id));
 
-  console.log(selected, memberWithOutHeadCount);
+  // console.log(selected, memberWithOutHeadCount);
 
   const getMembers = async () => {
     try {
@@ -42,7 +44,10 @@ const TeamTab = ({ data = {}, teamIndex = 0, setRefetchTeam = () => { }, deptId 
   }
 
   useEffect(() => {
-    if (show.includes(data._id)) getMembers();
+    if (show.includes(data._id)) {
+      if (user._id !== data.headEmp._id) Swal.fire("You are not the Head of this team. So you won't be able to see the member list.")
+      getMembers();
+    }
   }, [refetch, show])
 
   // console.log({refetch});
@@ -68,7 +73,7 @@ const TeamTab = ({ data = {}, teamIndex = 0, setRefetchTeam = () => { }, deptId 
           }}>{show.includes(data._id) ? <FaAngleUp /> : <FaAngleDown />}</button>
         </div>
       </div>
-      {show.includes(data._id) && <>
+      {show.includes(data._id) && user._id === data.headEmp._id && <>
         {members?.[data._id] && members?.[data._id].map((el, idx) => <EmployeeTab key={idx} data={el} memberIndex={idx} deptId={deptId} teamId={data._id} headMember={data.headEmp} setRefetchMember={setRefetch} setRefetchTeam={setRefetchTeam}
           memberWithOutHeadCount={memberWithOutHeadCount?.[data._id]} setMemberWithOutHeadCount={setMemberWithOutHeadCount}
           selected={selected} setSelected={setSelected}

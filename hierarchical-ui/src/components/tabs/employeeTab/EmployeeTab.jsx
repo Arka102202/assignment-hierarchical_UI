@@ -5,7 +5,7 @@ import RemoveMemberBtn from './RemoveMemberBtn';
 import SwitchHead from './SwitchHead';
 import Swal from 'sweetalert2';
 
-const EmployeeTab = ({ data = {}, memberIndex = 0, setRefetchMember = () => { }, deptId = "", teamId = "", headMember = {}, setRefetchTeam = () => { }, selected = {}, setSelected = () => { }, setMemberWithOutHeadCount = () => { }, memberWithOutHeadCount = 0 }) => {
+const EmployeeTab = ({ data = {}, memberIndex = 0, setRefetchMember = () => { }, deptId = "", teamId = "", headMember = {}, setRefetchTeam = () => { }, selected = {}, setSelected = () => { }, setMemberWithOutHeadCount = () => { }, memberWithOutHeadCount = 0, showExtraFeature = true }) => {
 
 
 
@@ -13,7 +13,7 @@ const EmployeeTab = ({ data = {}, memberIndex = 0, setRefetchMember = () => { },
     <div className='employee-tab-box'>
       <div className='header'>
         <div className='check-title-box'>
-          {!data.isHead && <input type="checkbox" onClick={e => e.stopPropagation()} checked={!!selected?.[data.teamId]?.some(el => el._id === data._id)}
+          {!data.isHead && showExtraFeature && <input type="checkbox" onClick={e => e.stopPropagation()} checked={!!selected?.[data.teamId]?.some(el => el._id === data._id)}
             onChange={(e) => {
               e.stopPropagation();
               if (e.target.checked && memberWithOutHeadCount > 1) {
@@ -50,14 +50,14 @@ const EmployeeTab = ({ data = {}, memberIndex = 0, setRefetchMember = () => { },
           />}
           <div className='title-box'>
             <p>{data.name}</p>
-            <p>{data.position}</p>
+            <p>({data.position})</p>
           </div>
         </div>
         <div className='btn-box'>
           {/* modify member */}
           <AddEmployeeBtn data={data} teamId={teamId} deptId={deptId} setRefetch={setRefetchMember} />
           {/* switch to head */}
-          {!data.isHead && <SwitchHead curHead={headMember} futureHead={data} deptId={data.deptId}
+          {!data.isHead && showExtraFeature && <SwitchHead curHead={headMember} futureHead={data} deptId={data.deptId}
             teamId={data.teamId} setRefetch={setRefetchMember} setRefetchTeam={setRefetchTeam} />}
         </div>
       </div>

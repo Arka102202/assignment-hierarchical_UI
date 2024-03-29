@@ -56,7 +56,7 @@ const AddDept = ({ data = {}, setShowForm = () => { } }) => {
   const addDept = async () => {
     setDisableBtn(true);
     if (!checkForNamingErr() && !checkNullHead()) {
-      console.log({ ...dept, headEmp: { ...headEmp }, hasHead: !!headEmp._id }, { ...JSON.parse(emp), isHead: true, deptId: dept._id, teamId: "" });
+      // console.log({ ...dept, headEmp: { ...headEmp }, hasHead: !!headEmp._id }, { ...JSON.parse(emp), isHead: true, deptId: dept._id, teamId: "" });
       try {
         if (Object.entries(data).length === 0) {
           await addOne({ ...dept, headEmp: { ...headEmp }, hasHead: !!headEmp._id });
